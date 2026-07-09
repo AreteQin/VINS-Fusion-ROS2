@@ -11,16 +11,6 @@
   #define GPU_MODE 1
   ```
 
-### Prerequisites
-- **System**
-  - Ubuntu 20.04
-  - ROS2 foxy
-- **Libraries**
-  - OpenCV 3.4.1 (with CUDA enabled option)
-  - OpenCV 3.4.1-contrib
-  - [Ceres Solver-2.1.0](http://ceres-solver.org/installation.html) (you can refer [here](https://github.com/zinuok/VINS-Fusion#-ceres-solver-1); just edit 1.14.0 to 2.1.0 for install.)
-  - [Eigen-3.3.9](https://github.com/zinuok/VINS-Fusion#-eigen-1)
-
 
 ### sensor setup
 - camera: Intel realsense D435i
@@ -33,10 +23,7 @@ bash realsense_install.sh
 
 ### build
 ```bash
-cd $(PATH_TO_YOUR_ROS2_WS)/src
-git clone https://github.com/zinuok/VINS-Fusion-ROS2
-cd ..
-colcon build --symlink-install && source ./install/setup.bash && source ./install/local_setup.bash
+colcon build --cmake-args -DCMAKE_PREFIX_PATH=/opt/ceres_2.1.0
 ```
 
 ### run
