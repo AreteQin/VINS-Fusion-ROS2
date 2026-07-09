@@ -89,6 +89,10 @@ install(
   DESTINATION lib/${PROJECT_NAME}
 )
 
+install(TARGETS kitti_odom_test
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 
 
 # Install binaries

@@ -1,0 +1,19 @@
+# Ignore virtual environments
+evo_env/
+.venv/
+env/
+ENV/
+
+# Ignore Python cache and bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore local IDE settings (VS Code, PyCharm, etc.)
+.vscode/
+.idea/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
