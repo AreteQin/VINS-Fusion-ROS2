@@ -123,5 +123,7 @@ int main(int argc, char** argv)
 	}
 	if(outFile != NULL)
 		fclose (outFile);
+
+	rclcpp::shutdown();
 	return 0;
 }

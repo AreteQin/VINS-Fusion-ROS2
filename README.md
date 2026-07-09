@@ -23,6 +23,7 @@ bash realsense_install.sh
 
 ### build
 ```bash
+./config_vins_fusion_ros2.sh
 colcon build --cmake-args -DCMAKE_PREFIX_PATH=/opt/ceres_2.1.0
 ```
 
@@ -33,6 +34,15 @@ ros2 run vins $(PATH_TO_YOUR_VINS_CONFIG_FILE)
 
 # Rviz2 visualization
 ros2 launch vins vins_rviz.launch.xml
+
+# Evaluation
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+pip install -r evaluation_requirements.txt
+cd home/qin/vins_output/
+sed -i 's/[[:space:]]*$//; /^$/d' ./vio.txt
+evo_ape kitti '/home/qin/Downloads/data_odometry_poses/dataset/poses/00.txt' ./vio.txt -va --plot --plot_mode=xz
 ```
 
 
