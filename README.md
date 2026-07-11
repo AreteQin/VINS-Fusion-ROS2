@@ -41,7 +41,7 @@ source .venv/bin/activate
 python -m pip install --upgrade pip
 pip install -r evaluation_requirements.txt
 cd home/qin/vins_output/
-sed -i 's/[[:space:]]*$//; /^$/d' ./vio.txt
+sed -i 's/[[:space:]]*$//; /^$/d' ./vio_*.txt
 evo_ape kitti '/home/qin/Downloads/data_odometry_poses/dataset/poses/00.txt' ./vio.txt -va --plot --plot_mode=xz
 ```
 
